@@ -1,0 +1,14 @@
+
+
+
+
+
+@keyframes menuChange {
+    0% {
+        width: 50px;
+    }
+
+    100% {
+        width: 5px;
+    }
+}
