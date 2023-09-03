@@ -1,37 +1,11 @@
 
 
 
-import { useState } from "react"
-import menus from "../../data/menus"
-import CreateMenu from "./CreateMenu"
+import DashboardBar from "./Sidebar"
+
+export default function YourPlanLayout({setNewAudit}) {
 
 
-export default function YourPlanLayout() {
-
-
-
-
-    const SelectedMenuStyle = {
-        backgroundColor: "",
-        color: ""
-    }
-
-
-
-    const renderMenus = menus.map(eachMenu => {
-
-        return (
-
-            <CreateMenu
-                name = {eachMenu.name}
-                emoji = {eachMenu.emoji}
-                page = {eachMenu.page}
-                currentPage = {"Your Plan"}
-            />
-
-        )
-
-    })
 
     return (
         <>
@@ -40,54 +14,148 @@ export default function YourPlanLayout() {
             
 
             <div className="main-dashboard">
-                    <div className="sideBar">
-
-                    <div className="logoWrapper">
-                        <div className="logo">
-                            <span class="material-symbols-rounded">
-                                vpn_key
-                            </span>
-                            <p>RMAUDIT</p>
-                        </div>
-                    </div>
-
-                    <div className="menuBarsWrapper">
+                
+                 <DashboardBar
+                    key={1}
+                    currentPage = {"Your Plan"}
+                    setNewAudit={setNewAudit}
+                 />
+                 
+                <div className="screen-dashboard">
 
 
-                        {renderMenus}
+                    <div className="inner-dashboard">
 
-
-                         <div className="menuBar createAudit">
-                                <span class="material-symbols-rounded">dashboard_customize</span>
-                                    <p>New Audit</p>                
-                            </div>
-
-
-                    </div>
-                    </div>
-
-
-                    <div className="screen-dashboard">
-
-                        <div className="userWrapper">
-                            
-                        <span class="material-symbols-rounded">account_circle</span>
-                            <div className="userInfo">
-                                <p>Mohammad</p>
-                                <p>Swinburne Student</p>
-                            </div>
+                        <div className="sectionHeader">
+                            <h4>Choose your plan</h4>
+                            <span className="material-symbols-rounded">how_to_reg</span>
                         </div>
 
+                        <hr></hr>
 
                         <div className="dashboardContentWrapper">
-                            <div className="boardMenu"></div>
-                            <div className="dashboardContent"></div>
-
-                        </div>
-
                         
+                                
+                                <div className="subscriptionBox">
 
-                    </div>
+                                <div className="boxInfo">
+    
+                                    <div className="subsBoxTop">
+
+                                        <p className="textBlue">STANDARD</p>
+
+                                    </div>
+
+                                    <div className="SubPrice">
+
+                                    <p className="Price">$19</p>
+                                    <p>/Month</p>
+
+                                    </div>
+
+                                    <div className="subsBoxCenter">
+                                        <ul>
+                                            <li><p><i className="fa-solid fa-star"></i> 100 Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> Access to Support</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> 10 Saved Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> 10 Suggestions</p></li>
+                                        </ul>
+                                            
+                                        
+                                    </div>
+                                </div>
+
+                                    <div className="subsBoxBottom">
+                                        <button className="soonButton">COMING SOON</button>
+
+                                    </div>
+                                
+                                
+
+                                </div>
+
+
+                                <div className="subscriptionBox">
+
+                                <div className="boxInfo">
+
+                                    <div className="subsBoxTop">
+
+                                        <p className="textBlue">PRO</p>
+
+                                    </div>
+
+                                    <div className="SubPrice">
+                                    <p className="Price">$39</p>
+                                    <p>/Month</p>
+
+                                    </div>
+
+                                    <div className="subsBoxCenter">
+                                        <ul>
+                                            <li><p><i className="fa-solid fa-star"></i> 1000 Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> Access to Support</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> 100 Saved Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> 100 Suggestions</p></li>
+                                        </ul>
+                                            
+                                        
+                                    </div>
+                                </div>
+
+                                    <div className="subsBoxBottom">
+                                        <button className="soonButton">COMING SOON</button>
+
+                                    </div>
+
+
+
+                                </div>
+
+                                  <div className="subscriptionBox">
+
+                                <div className="boxInfo">
+    
+                                    <div className="subsBoxTop">
+
+                                        <p className="textBlue">SWIN TUTOR</p>
+
+                                    </div>
+
+                                    <div className="SubPrice">
+
+                                    <p className="Price">$19</p>
+                                    <p>/Month</p>
+
+                                    </div>
+
+                                    <div className="subsBoxCenter">
+                                        <ul>
+                                            <li><p><i className="fa-solid fa-star"></i> Infinite Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> Access to Support</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> Infinite Saved Audits</p></li>
+                                            <li><p><i className="fa-solid fa-star"></i> Infinite Suggestions</p></li>
+                                        </ul>
+                                            
+                                        
+                                    </div>
+                                </div>
+
+                                    <div className="subsBoxBottom">
+                                        <button className="currentButton">CURRENT PLAN</button>
+
+                                    </div>
+                                
+                                
+
+                                </div>
+
+                            
+                        </div>  
+
+                     </div>        
+
+                </div>
 
             </div>
 

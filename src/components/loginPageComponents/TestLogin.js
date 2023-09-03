@@ -1,37 +1,35 @@
+import { useState } from "react"
 
 
 
-
+import HorzLines from "../HorzLines"
+import VertLines from "../VertLines"
 
 
 export default function TestLogin() {
 
 
-    
-
+    const [incorrect, setIncorrect] = useState(false)
+ 
     return (
         <>
 
         <div className="loginPageWrapper">
 
-            <div className="horizontalLines">
-
-                <div className="hLine"></div>
-                <div className="hLine"></div>
-                <div className="hLine"></div>
-                {/* <div className="hLine"></div> */}
-                {/* <div className="hLine"></div> */}
-
+        <div className="logoWrapper logoFixed">
+                <a href="/">
+                    <div className="logo">
+                        <span className="material-symbols-rounded">
+                            vpn_key
+                        </span>
+                        <p>RMAUDIT</p>
+                    </div>
+                </a>
             </div>
 
 
-            <div className="verticalLines">
-                <div className="vLine"></div>
-                <div className="vLine"></div>
-                <div className="vLine"></div>
-                {/* <div className="vLine"></div> */}
-                {/* <div className="vLine"></div> */}
-            </div>
+            <HorzLines/>
+            <VertLines/>
 
             <div className="colorBars">
                 <div className="bar"></div>
@@ -48,8 +46,14 @@ export default function TestLogin() {
 
             <div className="loginBoxWrapper-shadow">
                 <div className="loginBoxWrapper">
-
                     <p className="heading">Sign in to your account</p>
+
+                    {
+                        incorrect
+                        &&
+                        <p className="incorrect">Username or password incorrect, please try again</p>
+
+                    }
 
                     <form>
                 
@@ -87,10 +91,10 @@ export default function TestLogin() {
 
                     <p className="signUpText">Don't have an account? <span className="signUpHyper">Sign up</span></p>
                     
+
+                    <a className="menuBarHref" href={`/dashboard`}>
                     <button
-
-                    
-
+                    className="continueBtn"
                     >
                         Continue
                         <div className="spanWrapper">
@@ -100,6 +104,7 @@ export default function TestLogin() {
                         </div>
                     
                     </button>
+                    </a>
 
                     {/* <p><span>Terms of Service</span> - <span>Privacy Policy</span></p> */}
 

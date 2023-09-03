@@ -6,8 +6,9 @@
 export default [
     {    
 
-        name: "Audit1",
-        date: "31/08/23",
+        name: "Eth Staking Contract",
+        date: "31/08/2023",
+        id:1,
 
         errors: [
             {
@@ -28,8 +29,9 @@ export default [
     },
     {    
 
-        name: "mohammad",
-        date: "20/08/2020",
+        name: "Sol Smart Contract",
+        date: "20/08/2020",  
+        id:2,
 
         errors: [
             {

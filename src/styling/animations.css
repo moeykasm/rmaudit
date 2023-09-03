@@ -12,3 +12,51 @@
         width: 5px;
     }
 }
+
+
+
+.continueBtn:hover {
+    background-color: #0d74b4;
+    transition: 0.3s;
+
+}
+.continueBtn:not(:hover) {
+    background-color: #067BDC;
+    transition: 0.3s;
+}
+
+
+
+
+.createAudit:hover {
+    background-color: #afafaf;
+    transition: 0.3s;
+
+}
+.createAudit:not(:hover) {
+    background-color: white;
+    transition: 0.3s;
+}
+
+
+.btnsHolder button:nth-child(1):hover {
+    background-color: #972323;
+    transition: 0.3s;
+}
+
+.btnsHolder button:nth-child(1):not(:hover) {
+    background-color: #d23232;
+    transition: 0.3s;
+}
+
+
+.btnsHolder button:nth-child(2):hover {
+    background-color: #1f701b;
+    transition: 0.3s;
+}
+
+.btnsHolder button:nth-child(2):not(:hover) {
+    background-color: #30aa29;
+    transition: 0.3s;
+}
+

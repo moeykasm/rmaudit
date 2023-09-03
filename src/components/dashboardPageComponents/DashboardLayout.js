@@ -1,37 +1,10 @@
 
 
 
-import { useState } from "react"
-import menus from "../../data/menus"
-import CreateMenu from "./CreateMenu"
+import DashboardBar from "./Sidebar"
 
+export default function DashboardLayout({setNewAudit}) {
 
-export default function DashboardLayout() {
-
-
-
-
-    const SelectedMenuStyle = {
-        backgroundColor: "",
-        color: ""
-    }
-
-
-
-    const renderMenus = menus.map(eachMenu => {
-
-        return (
-
-            <CreateMenu
-                name = {eachMenu.name}
-                emoji = {eachMenu.emoji}
-                page = {eachMenu.page}
-                currentPage = {"Dashboard"}
-            />
-
-        )
-
-    })
 
     return (
         <>
@@ -40,55 +13,53 @@ export default function DashboardLayout() {
             
 
             <div className="main-dashboard">
-                    <div className="sideBar">
 
-                    <div className="logoWrapper">
-                        <div className="logo">
-                            <span class="material-symbols-rounded">
-                                vpn_key
-                            </span>
-                            <p>RMAUDIT</p>
-                        </div>
+
+                  <DashboardBar
+                    key={1}
+                    currentPage ={"Dashboard"}
+                    setNewAudit={setNewAudit}
+                  />
+
+                                
+                <div className="screen-dashboard">
+
+
+                <div className="inner-dashboard">
+
+                    <div className="sectionHeader">
+                        <h4>Your Dashboard</h4>
+                        <span className="material-symbols-rounded">dashboard_customize</span>
                     </div>
 
-                    <div className="menuBarsWrapper">
+                    <hr></hr>
 
+                    <div className="dashboardContentWrapper">
+                    
+                        <div className="dashboardWrapper">
 
-                        {renderMenus}
-
-
-                        <div className="menuBar createAudit">
-                            <span class="material-symbols-rounded">dashboard_customize</span>
-                            <p>New Audit</p>                    
-                        </div>
-
-
-
-                    </div>
-                    </div>
-
-
-                    <div className="screen-dashboard">
-
-                        <div className="userWrapper">
-                            
-                        <span class="material-symbols-rounded">account_circle</span>
-                            <div className="userInfo">
-                                <p>Mohammad</p>
-                                <p>Swinburne Student</p>
+                            <div className="totalSessions">
+                                <p><i className="fa-solid fa-border-all"></i> Total Sessions</p>
+                                <p>29</p>
                             </div>
+                            <div className="totalAudits">
+                                <p><i className="fa-solid fa-circle-plus"></i> Total Audits</p>
+                                <p>9</p>
+                            </div>
+                            <div className="totalSuggestions">
+                                <p><i className="fa-solid fa-circle-question"></i> Total Suggestions</p>
+                                <p>18</p>
+                            </div>
+
                         </div>
-
-
-                        <div className="dashboardContentWrapper">
-                            <div className="boardMenu"></div>
-                            <div className="dashboardContent"></div>
-
-                        </div>
-
                         
+                    </div>  
 
-                    </div>
+                </div>        
+
+                </div>
+
+
 
             </div>
 

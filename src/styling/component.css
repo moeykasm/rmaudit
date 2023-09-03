@@ -6,19 +6,38 @@
 
 
 
-
-
-.audit {
+.auditsWrapper {
     width: 100%;
-    border: 1px solid red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}.audit {
+    background-color: #1E2026;
+    padding: 20px;
+    border-radius: 15px;
+
+    border: 0;
+
+    width: 100%;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}.auditOutcome  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 
+.errorTag{
+    color: red;
 
-
-
-
-
+}.suggestionTag {
+    color: green;
+}
 
 
 

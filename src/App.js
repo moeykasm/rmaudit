@@ -1,15 +1,19 @@
-// import { useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
 import AllAuditsPage from './pages/AllAuditsPage'
 import SupportPage from './pages/SupportPage'
 import YourPlanPage from './pages/YourPlanPage'
+import NewAudit from './components/dashboardPageComponents/NewAudit'
+import HomePageComponents from './pages/HomePageComponents'
 
 function App() {
 
+  const [newAudit, setNewAudit] = useState(false)
+
+  
   return (
 
     <>
@@ -17,13 +21,13 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-          <Route index element={ <LoginPage/> } />
+          <Route index element={ <HomePageComponents/> } />
 
-        
-          <Route path='/user/name/dashboard' element={<DashboardPage/>}/> 
-          <Route path='/user/name/allaudits' element={<AllAuditsPage />}/> 
-          <Route path='/user/name/yourplan' element={<YourPlanPage />}/> 
-          <Route path='/user/name/support' element={<SupportPage />}/> 
+          <Route path='/login' element={<LoginPage/>}/> 
+          <Route path='/dashboard' element={<DashboardPage setNewAudit={setNewAudit}/>}/> 
+          <Route path='/audits' element={<AllAuditsPage setNewAudit={setNewAudit}/>}/> 
+          <Route path='/yourplan' element={<YourPlanPage setNewAudit={setNewAudit}/>}/> 
+          <Route path='/support' element={<SupportPage setNewAudit={setNewAudit}/>}/> 
       
     
           {/* <Route path='*' element={<LoginPage/>} /> */}
@@ -31,6 +35,16 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+
+      {
+        newAudit
+        &&
+        <NewAudit
+          setNewAudit={setNewAudit}
+        />
+      }
+
+
     </>
   );
 }

@@ -5,13 +5,15 @@
 
 import YourPlanLayout from '../components/dashboardPageComponents/YourPlanLayout'
 
-export default function YourPlanPage() {
+export default function YourPlanPage({setNewAudit}) {
 
     return (
         <>
 
-            <YourPlanLayout/>
-            <p>Plan</p>
+            <YourPlanLayout
+            setNewAudit={setNewAudit}
+            />
+        
         </>
     )
 }

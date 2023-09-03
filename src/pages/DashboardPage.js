@@ -3,38 +3,22 @@
 
 
 import DashboardLayout from '../components/dashboardPageComponents/DashboardLayout'
-import audits from '../data/audits'
-import CreateAudit from '../components/dashboardPageComponents/CreateAudit'
-
-export default function DashboardPage() {
 
 
-    console.log(audits[0].errors[0].error)
+export default function DashboardPage({setNewAudit}) {
 
 
+ 
 
 
-    const renderAudits = audits.map(eachAudit => {
-        return (
-           <CreateAudit
-                name = {eachAudit.name}
-                date = {eachAudit.date}
-           /> 
-        )
-    })
     
 
     return (
         <>
 
-            <DashboardLayout
-            
-            />
+            <DashboardLayout setNewAudit={setNewAudit}/>
 
-            <div className='wrapperDemo'>
-                {renderAudits}
-            </div>
-         
+        
 
         </>
     )

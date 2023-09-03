@@ -1,37 +1,10 @@
 
 
 
-import { useState } from "react"
-import menus from "../../data/menus"
-import CreateMenu from "./CreateMenu"
+import DashboardBar from "./Sidebar"
 
+export default function SupportLayout({setNewAudit}) {
 
-export default function SupportLayout() {
-
-
-
-
-    const SelectedMenuStyle = {
-        backgroundColor: "",
-        color: ""
-    }
-
-
-
-    const renderMenus = menus.map(eachMenu => {
-
-        return (
-
-            <CreateMenu
-                name = {eachMenu.name}
-                emoji = {eachMenu.emoji}
-                page = {eachMenu.page}
-                currentPage = {"Support"}
-            />
-
-        )
-
-    })
 
     return (
         <>
@@ -40,55 +13,40 @@ export default function SupportLayout() {
             
 
             <div className="main-dashboard">
-                    <div className="sideBar">
+               
 
-                    <div className="logoWrapper">
-                        <div className="logo">
-                            <span class="material-symbols-rounded">
-                                vpn_key
-                            </span>
-                            <p>RMAUDIT</p>
-                        </div>
-                    </div>
-
-                    <div className="menuBarsWrapper">
-
-
-                        {renderMenus}
-
-                        <div className="menuBar createAudit">
-                                <span class="material-symbols-rounded">dashboard_customize</span>
-                                    <p>New Audit</p>
-                                         
-                            </div>
-
-
-
-                    </div>
-                    </div>
-
+                    <DashboardBar
+                        key={1}
+                        currentPage={"Support"}
+                        setNewAudit={setNewAudit}
+                    />
 
                     <div className="screen-dashboard">
 
-                        <div className="userWrapper">
-                            
-                        <span class="material-symbols-rounded">account_circle</span>
-                            <div className="userInfo">
-                                <p>Mohammad</p>
-                                <p>Swinburne Student</p>
-                            </div>
+
+                    <div className="inner-dashboard">
+
+                        <div className="sectionHeader">
+                            <h4>Contact us</h4>
+                            <span className="material-symbols-rounded">support_agent</span>
                         </div>
 
+                        <hr></hr>
 
                         <div className="dashboardContentWrapper">
-                            <div className="boardMenu"></div>
-                            <div className="dashboardContent"></div>
-
-                        </div>
-
                         
+                            <div className="contactWrapper">
+                                <input type="text" placeholder="Title of Issue"/>
+                                <textarea  placeholder="How can we Help?"/>
+                                <button className="submitBtn">SUBMIT</button>
+                            </div>
+                            
+                        </div>  
+
+                    </div>        
 
                     </div>
+
 
             </div>
 

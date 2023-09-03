@@ -11,7 +11,7 @@ export default [
     {
         name: "All Audits",
         emoji: "grid_view",
-        page: "allaudits"
+        page: "audits"
     },
     {
         name: "Your Plan",

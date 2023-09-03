@@ -3,14 +3,15 @@
 
 
 import SupportLayout from '../components/dashboardPageComponents/SupportLayout'
-
-export default function SupportPage() {
+export default function SupportPage({setNewAudit}) {
 
     return (
         <>
 
-            <SupportLayout/>
-            <p>support</p>
+            <SupportLayout
+            setNewAudit={setNewAudit}
+            />
+  
         </>
     )
 }
